@@ -4,6 +4,8 @@
 
 **소스 of truth:** [../assets/report-base.css](../assets/report-base.css) — 앱 CSS 변수는 여기와 **동일 키·값** 유지.
 
+**구현 수단:** Tailwind v4 `@theme` — [ADR-0010](../../adr/0010-tailwind-with-handoff-tokens.md).
+
 ---
 
 ## Color

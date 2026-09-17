@@ -13,6 +13,8 @@
 | [0007](./0007-transcript-internal-only.md) | 받아쓰기 저장·UI 미노출 | Accepted |
 | [0008](./0008-app-auth-no-rls-no-supabase-auth.md) | 앱 비밀번호 세션, RLS·Supabase Auth 없음 | Accepted |
 | [0009](./0009-nextjs-app-framework.md) | 앱 프레임워크 Next.js (TypeScript) | Accepted |
+| [0010](./0010-tailwind-with-handoff-tokens.md) | 스타일링 Tailwind v4 + handoff 토큰 | Accepted |
+| [0011](./0011-sql-without-orm.md) | DB 접근 ORM 없이 SQL, Storage 어댑터 | Accepted |
 
 **형식:** 배경 → 결정 → 이유 → 결과(트레이드오프) → 관련 문서
 

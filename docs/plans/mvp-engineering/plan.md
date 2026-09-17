@@ -40,7 +40,9 @@
 | --- | --- | --- |
 | 앱 | **Next.js (App Router) + TypeScript**, 화면·서버 API 한 프로젝트 | [0009](../../adr/0009-nextjs-app-framework.md) |
 | 배포 | Vercel (Vercel 전용 기능 의존 금지) | [0009](../../adr/0009-nextjs-app-framework.md) |
+| 스타일 | **Tailwind v4 + handoff CSS 변수 토큰**, 컴포넌트 라이브러리 없음, 아이콘 Lucide | [0010](../../adr/0010-tailwind-with-handoff-tokens.md) |
 | DB·파일 | Supabase (Postgres + Storage) | [0003](../../adr/0003-supabase-with-aws-migration-path.md) |
+| DB 접근 | **ORM 없이 SQL**(postgres.js) · 쿼리는 리포지토리 계층만 · Storage는 어댑터 | [0011](../../adr/0011-sql-without-orm.md) |
 | 긴 작업 | Inngest | [0006](../../adr/0006-inngest-background-jobs.md) |
 | 로그인 | **앱 비밀번호** + 서버 세션 (Supabase Auth 없음) | [0001](../../adr/0001-single-user-lock-not-team-product.md), [0008](../../adr/0008-app-auth-no-rls-no-supabase-auth.md) |
 | 접근 통제 | **RLS 없음**, API·워커만 DB/Storage | [0008](../../adr/0008-app-auth-no-rls-no-supabase-auth.md) |
