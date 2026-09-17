@@ -19,8 +19,8 @@ docs/ui-ux/
 │   ├── 05-product-policies.md
 │   ├── 06-states-errors-non-goals.md
 │   └── 07-implementation-roadmap.md
-├── assets/                ← CSS·JS (토큰 source of truth)
-│   ├── report-base.css
+├── assets/                ← 디자인 시스템 중심 (토큰·mockup 공통 CSS)
+│   ├── report-base.css    ← :root 변수의 유일한 기준
 │   └── report-shared.js
 └── preview/               ← 기획·QA용 HTML mockup
     ├── index.html
@@ -36,12 +36,12 @@ docs/ui-ux/
 
 | 대상 | 어디를 보나 |
 | --- | --- |
-| **개발** | `handoff/` 00 → 07 (짧게는 01·02·07) + `assets/report-base.css` |
+| **개발** | `assets/report-base.css` (토큰) → `handoff/` 00 → 07 (짧게는 01·02·07) |
 | **기획·QA** | `preview/index.html` (브라우저) |
 | **도메인 배경** | [../domain_story_meeting_agent.md](../domain_story_meeting_agent.md) |
 | **엔지니어링·ADR** | [../README.md](../README.md) · [../plans/mvp-engineering/plan.md](../plans/mvp-engineering/plan.md) |
 
-HTML은 **참고 mockup**이며, 구현 충돌 시 **handoff Markdown**이 우선합니다.
+HTML mockup은 **참고**입니다. 충돌 시 우선순위: **토큰·레이아웃 수치 → `report-base.css`** · 화면·동작·정책 → **handoff Markdown**.
 
 ---
 

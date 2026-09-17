@@ -2,9 +2,9 @@
 
 [← 화면 스펙](./02-screen-spec.md) · [다음: 컴포넌트 →](./04-components.md)
 
-**소스 of truth:** [../assets/report-base.css](../assets/report-base.css) — 앱 CSS 변수는 여기와 **동일 키·값** 유지.
+**디자인 시스템 중심:** [../assets/report-base.css](../assets/report-base.css) — 토큰·레이아웃 수치의 **유일한 기준**. 아래 표는 설명용이며, 값이 다르면 **CSS 파일이 맞다.**
 
-**구현 수단:** Tailwind v4 `@theme` — [ADR-0010](../../adr/0010-tailwind-with-handoff-tokens.md).
+**앱 구현:** `app/globals.css`의 Tailwind v4 `@theme` / `:root`는 report-base.css와 **동일 키·값** — [ADR-0010](../../adr/0010-tailwind-with-handoff-tokens.md). 토큰을 바꿀 때는 **CSS → 앱 → 이 문서** 순서.
 
 ---
 
@@ -30,16 +30,28 @@
 
 ## Typography
 
-| Role | Font | Size |
+| Role | Font | Size (report-base.css 기준) |
 | --- | --- | --- |
-| UI | IBM Plex Sans KR | 15px base |
-| Display | Literata | 1.2–1.35rem |
+| Body | IBM Plex Sans KR (`--font-sans`) | **16px** (`body`) |
+| UI / 본문 컴포넌트 | IBM Plex Sans KR | 14–15px (mockup 클래스) |
+| Display | Literata (`--font-display`) | 1.2–1.35rem |
 | Meta / tag | IBM Plex Sans KR | 11–13px |
 
 ---
 
 ## Radius & layout
 
-- **Radius:** sm 8px · md 14px · lg 20px · pill `9999px`
-- **Sidebar:** 220px (접힘 68px)
-- **Content:** max ~960px (④), mock full ~1120px
+`:root` 변수는 report-base.css와 동일.
+
+| Token | Value | Usage |
+| --- | --- | --- |
+| `--radius-sm` | 8px | |
+| `--radius-md` | 14px | |
+| `--radius-lg` | 20px | |
+| `--radius-full` | 9999px | pill |
+| `--sidebar-w` | **240px** | 사이드바 |
+| `--read-max` | **680px** | 읽기 폭 (④ 등) |
+| `--mock-max` | **1120px** | mockup 전체 폭 |
+
+- **Hub·목록 mock:** `.hub-body` 등 preview CSS는 **max-width 960px** (변수 아님). 앱 ⑤는 `--mock-max` 또는 화면 스펙(02)을 따른다.
+- **사이드바 접힘:** MVP 토큰에 없음. 필요 시 report-base.css에 변수 추가 후 여기 반영.
