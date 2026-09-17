@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>확정 화면 — 회의록 UX</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Literata:opsz,wght@7..72,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/report-base.css" />
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="report-layout">
+    <aside class="report-sidebar">
+      <a class="back" href="index.html">← 목록으로</a>
+      <h1>확정 화면</h1>
+      <p class="chapter-desc">Desktop Web · 선택안만 표시.</p>
+      <nav>
+        <a href="#s1" class="active">① 녹음 홈</a>
+        <a href="#s2">② 녹음 중</a>
+        <a href="#s3">③ 요약 생성</a>
+        <a href="#s4">④ 종료 직후</a>
+        <a href="#s5">⑤ 목록</a>
+        <a href="#s6">⑥ 상세</a>
+        <a href="#s7">⑦ 챗봇</a>
+      </nav>
+    </aside>
+
+    <main class="report-main">
+      <div class="page-hero">
+        <h2>화면 mockup (확정안)</h2>
+        <p>각 화면 <strong>한 블록</strong>씩만 둡니다. 수정 요청은 하단 피드백.</p>
+      </div>
+
+      <section class="content-block screen-single" id="s1">
+        <div class="screen-title">① 녹음 홈 · 1a<span class="badge-confirmed">확정</span></div>
+        <h3>좌측 사이드바 + 중앙 녹음</h3>
+        <div class="desktop-frame">
+          <div class="desktop-chrome"><div class="url">https://app.example/recording</div></div>
+          <div class="desktop-viewport">
+            <div class="web-shell">
+              <aside class="web-sidebar">
+                <div class="nav-item active"><i data-lucide="mic"></i> 녹음</div>
+                <div class="nav-item"><i data-lucide="folder-open"></i> 지난 회의</div>
+              </aside>
+              <div class="web-main">
+                <div class="web-content" style="display:flex;align-items:center;justify-content:center;min-height:340px;">
+                  <button type="button" class="btn-record-xl"><i data-lucide="mic"></i> 녹음 시작</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="feedback-box"><label class="meta">피드백</label><textarea data-feedback="screen-1" placeholder="① 화면"></textarea></div>
+      </section>
+
+      <section class="content-block screen-single" id="s2">
+        <div class="screen-title">② 녹음 중 · 2a</div>
+        <h3>좌: 타이머·종료 / 우: 메모</h3>
+        <div class="desktop-frame">
+          <div class="desktop-viewport">
+            <div class="web-shell">
+              <aside class="web-sidebar collapsed"></aside>
+              <div class="web-main split-recording">
+                <div class="left">
+                  <span class="meta" style="color:var(--color-recording);font-weight:600;">녹음 중</span>
+                  <div class="timer-xl">00:42:18</div>
+                  <button type="button" class="btn-record-xl"><i data-lucide="square"></i> 종료</button>
+                </div>
+                <div class="right">
+                  <div class="tag">내 메모</div>
+                  <textarea class="memo-editor" placeholder="할 일 · 일정 · 이슈"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="feedback-box"><textarea data-feedback="screen-2"></textarea></div>
+      </section>
+
+      <section class="content-block screen-single" id="s3">
+        <div class="screen-title">③ 요약 생성 · 3a</div>
+        <h3>단계 표시 + 상단 「목록 이동」</h3>
+        <div class="desktop-frame">
+          <div class="desktop-viewport">
+            <div class="web-shell">
+              <aside class="web-sidebar collapsed"></aside>
+              <div class="web-main">
+                <div class="web-topbar">
+                  <span>요약 생성 중</span>
+                  <button type="button" class="btn btn-ghost btn-sm">지난 회의 목록으로 이동</button>
+                </div>
+                <div class="web-content narrow">
+                  <ul class="step-line">
+                    <li class="done"><i data-lucide="check-circle"></i> 녹음 저장</li>
+                    <li class="now"><i data-lucide="loader-circle"></i> 전사 중…</li>
+                    <li><i data-lucide="circle"></i> 할 일·제목</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="feedback-box"><textarea data-feedback="screen-3"></textarea></div>
+      </section>
+
+      <section class="content-block screen-single" id="s4">
+        <div class="screen-title">④ 종료 직후 · 4a</div>
+        <h3>할 일 → 2열(AI|메모)</h3>
+        <div class="desktop-frame">
+          <div class="desktop-viewport" style="padding:24px 28px;">
+            <input class="title-input" value="2026-09-10 (수) · 기능 A · 고객 이슈" readonly />
+            <div class="tag">할 일</div>
+            <div class="todo-row"><input type="checkbox" /><div>재현 로그 공유 <span class="meta">· 금요일</span></div></div>
+            <div class="cols-2">
+              <div class="panel ai"><div class="ai-summary-preview"><h5>고객 이슈</h5><ul><li>로그 필요</li></ul></div></div>
+              <div class="panel"><p class="user-note-text">2841 로그</p></div>
+            </div>
+            <p style="text-align:right;margin-top:16px"><button type="button" class="btn btn-primary"><i data-lucide="check"></i> 저장</button></p>
+          </div>
+        </div>
+        <div class="feedback-box"><textarea data-feedback="screen-4"></textarea></div>
+      </section>
+
+      <section class="content-block screen-single" id="s5">
+        <div class="screen-title">⑤ 목록 · 5b</div>
+        <h3>테이블 + 미완료 필터</h3>
+        <div class="desktop-frame">
+          <div class="desktop-viewport" style="padding:20px 24px;">
+            <button type="button" class="btn btn-secondary btn-sm"><i data-lucide="filter"></i> 미완료 할 일만</button>
+            <table class="meeting-table" style="margin-top:12px;">
+              <tr><th>제목</th><th class="col-date">날짜</th><th class="col-todo">미완료</th></tr>
+              <tr><td>2026-09-10 (수) · 기능 A · 고객 이슈</td><td class="col-date">2026-09-10</td><td class="col-todo">1</td></tr>
+              <tr><td>2026-09-03 (수) · 스프린트 회고</td><td class="col-date">2026-09-03</td><td class="col-todo">0</td></tr>
+            </table>
+          </div>
+        </div>
+        <div class="feedback-box"><textarea data-feedback="screen-5"></textarea></div>
+      </section>
+
+      <section class="content-block screen-single" id="s6">
+        <div class="screen-title">⑥ 상세 · 6a</div>
+        <h3>탭: 할 일 | 요약 | 오디오 (미니 플레이어, 전사 없음)</h3>
+        <div class="desktop-frame">
+          <div class="desktop-viewport">
+            <div class="web-topbar">
+              <button type="button" class="btn btn-ghost btn-sm"><i data-lucide="arrow-left"></i> 목록</button>
+              <span style="font-family:var(--font-display);">2026-09-10 (수) · 기능 A · 고객 이슈</span>
+              <button type="button" class="btn btn-secondary btn-sm"><i data-lucide="message-circle"></i> 챗</button>
+            </div>
+            <div class="web-content">
+              <p class="meta" style="margin-bottom:12px;"><strong style="color:var(--color-primary);">할 일</strong> · 요약 · 오디오</p>
+              <div class="todo-row"><input type="checkbox" /><div>로그 공유</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="feedback-box"><textarea data-feedback="screen-6"></textarea></div>
+      </section>
+
+      <section class="content-block screen-single" id="s7">
+        <div class="screen-title">⑦ 챗봇 · 7a 플로팅</div>
+        <h3>채널톡式 · 우하단</h3>
+        <div class="desktop-frame">
+          <div class="desktop-viewport float-chat-demo">
+            <div class="float-chat-window">
+              <div class="float-chat-head"><i data-lucide="lock"></i> 이 회의만</div>
+              <div class="float-chat-body">
+                <div class="chat-bubble chat-user">내 할 일 뭐였지?</div>
+                <div class="chat-bubble chat-bot">재현 로그 공유(금) 등 2건</div>
+              </div>
+            </div>
+            <button type="button" class="float-chat-launcher"><i data-lucide="message-circle"></i></button>
+          </div>
+        </div>
+        <div class="feedback-box"><textarea data-feedback="screen-7"></textarea></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="sticky-foot">
+    <button type="button" class="btn btn-primary" id="ux-export-btn"><i data-lucide="clipboard-copy"></i> 피드백 복사</button>
+  </div>
+  <script src="../assets/report-shared.js"></script>
+</body>
+</html>

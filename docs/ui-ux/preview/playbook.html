@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>실제 동작 — 회의록 UX</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Literata:opsz,wght@7..72,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/report-base.css" />
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="report-layout">
+    <aside class="report-sidebar">
+      <a class="back" href="index.html">← 목록으로</a>
+      <h1>실제 동작</h1>
+      <p class="chapter-desc">수요일 회의 1회 기준. 아래 목차로 점프.</p>
+      <nav>
+        <a href="#time" class="active">시간 순서</a>
+        <a href="#title">제목 만들기</a>
+        <a href="#fill">④ 채워지는 순</a>
+        <a href="#summary">요약 형태</a>
+        <a href="#later">며칠 뒤</a>
+        <a href="#filter">미완료 필터</a>
+        <a href="#memo-ai">메모 vs AI</a>
+      </nav>
+    </aside>
+
+    <main class="report-main">
+      <div class="page-hero">
+        <h2>실제로 어떻게 동작하나요</h2>
+        <p>정책 문장 대신, <strong>화면이 바뀌는 순서</strong>만 봅니다. 파란 탭을 눌러 보세요.</p>
+      </div>
+
+      <section class="content-block" id="time">
+        <h3>1. 녹음 종료 후 — 시간 순서</h3>
+        <p class="lead">같은 브라우저 탭 안에서만 일어납니다.</p>
+        <div class="phase-tabs">
+          <button type="button" class="phase-tab active" data-loading-phase="p0">T0 방금 종료</button>
+          <button type="button" class="phase-tab" data-loading-phase="p1">~30초~2분</button>
+          <button type="button" class="phase-tab" data-loading-phase="p2">~2분 → ④</button>
+          <button type="button" class="phase-tab" data-loading-phase="p3">5분+ 지연</button>
+        </div>
+        <p class="phase-caption" id="loading-caption"></p>
+        <div class="desktop-frame">
+          <div class="desktop-chrome"><div class="url" id="loading-url"></div></div>
+          <div class="desktop-viewport" id="loading-view" style="min-height:320px;"></div>
+        </div>
+      </section>
+
+      <section class="content-block" id="title">
+        <h3>2. 제목이 만들어지는 방법</h3>
+        <p class="lead">날짜는 앱이 붙이고, 주제만 AI가 냅니다.</p>
+        <div class="data-flow">
+          <div class="box">AI: <code>기능 A · 고객 이슈</code></div>
+          <span class="arrow">→</span>
+          <div class="box">앱: <code>2026-09-10 (수) · …</code></div>
+          <span class="arrow">→</span>
+          <div class="box">④ 입력란</div>
+          <span class="arrow">→</span>
+          <div class="box">⑤ 목록</div>
+        </div>
+        <div class="callout">비우고 저장하면 <code>2026-09-10 (수) · 회의</code> 로 자동 저장 (팝업 없음).</div>
+      </section>
+
+      <section class="content-block" id="fill">
+        <h3>3. ④ 화면 — 무엇이 먼저 보이나</h3>
+        <div class="phase-tabs">
+          <button type="button" class="phase-tab active" data-fill-phase="f1">1차 도착</button>
+          <button type="button" class="phase-tab" data-fill-phase="f2">2차 완성</button>
+        </div>
+        <p class="phase-caption" id="fill-caption"></p>
+        <div class="desktop-frame">
+          <div class="desktop-viewport" id="fill-view" style="padding:24px 28px;min-height:300px;"></div>
+        </div>
+      </section>
+
+      <section class="content-block" id="summary">
+        <h3>4. AI 요약 최종 모습</h3>
+        <p class="lead">안건(주제)별 · 불릿 · 결정 한 줄. 할 일 블록과 위치는 분리.</p>
+        <div class="desktop-frame">
+          <div class="desktop-viewport" style="padding:24px 28px;">
+            <div class="cols-2">
+              <div class="panel ai">
+                <div class="ai-summary-preview">
+                  <h5>기능 A 일정</h5>
+                  <ul><li>API 우선</li></ul>
+                  <div class="decision-line">결정: 버그fix 우선</div>
+                  <h5>고객 이슈 #2841</h5>
+                  <ul><li>재현 로그 필요</li></ul>
+                </div>
+              </div>
+              <div class="panel">
+                <div class="tag">내 메모 · 검정</div>
+                <p class="user-note-text">2841 로그 받기</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-block" id="later">
+        <h3>5. 며칠 뒤</h3>
+        <p class="lead">⑤ 테이블에서 제목 한 줄 → 클릭 → ⑥ · 우하단 챗(⑦).</p>
+        <div class="desktop-frame">
+          <div class="desktop-viewport" style="padding:20px 24px;">
+            <table class="meeting-table">
+              <tr><th>제목</th><th class="col-date">날짜</th><th class="col-todo">미완료</th></tr>
+              <tr><td><strong>2026-09-10 (수) · 기능 A · 고객 이슈</strong></td><td class="col-date">2026-09-10</td><td class="col-todo">1</td></tr>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-block" id="filter">
+        <h3>6. 「미완료 할 일만」 (알림 아님)</h3>
+        <p class="lead">목록을 <strong>필터</strong>할 뿐입니다. 버튼을 눌러 동작을 확인하세요.</p>
+        <div class="desktop-frame">
+          <div class="desktop-viewport" style="padding:20px 24px;">
+            <button type="button" class="btn btn-secondary btn-sm" id="filter-demo-btn">미완료 할 일만</button>
+            <table class="meeting-table" id="filter-demo-table" style="margin-top:16px;">
+              <thead><tr><th>제목</th><th class="col-date">날짜</th><th class="col-todo">미완료</th></tr></thead>
+              <tbody>
+                <tr data-open-todos="1"><td>2026-09-10 (수) · 기능 A · 고객 이슈</td><td class="col-date">2026-09-10</td><td class="col-todo">1</td></tr>
+                <tr data-open-todos="0"><td>2026-09-03 (수) · 스프린트 회고</td><td class="col-date">2026-09-03</td><td class="col-todo">0</td></tr>
+                <tr data-open-todos="2"><td>2026-08-27 (수) · 고객 VOC</td><td class="col-date">2026-08-27</td><td class="col-todo">2</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-block" id="memo-ai">
+        <h3>7. 내 메모 vs AI — 충돌 시</h3>
+        <p class="lead">Granola식: <strong>둘 다 보여 주고</strong>, AI는 회색·메모는 검정. 재생성해도 <strong>내 메모 칸은 안 바뀜</strong>.</p>
+        <div class="desktop-frame">
+          <div class="desktop-viewport" style="padding:20px 24px;">
+            <div class="cols-2">
+              <div class="panel ai"><div class="tag">AI</div><p>금요일까지 로그 공유</p></div>
+              <div class="panel"><div class="tag">내 메모</div><p class="user-note-text">2841 로그 내가 받기 (목요일?)</p></div>
+            </div>
+            <p class="meta" style="margin-top:12px;">→ 사용자가 AI 또는 메모 쪽을 고쳐 저장. 앱이 “어느 쪽이 맞다”고 강요하지 않음.</p>
+          </div>
+        </div>
+      </section>
+
+      <p><a href="screens.html" class="btn btn-primary">다음: 확정 화면 mockup →</a></p>
+      <p style="margin-top:12px;"><a href="../handoff/00-start.md" class="btn btn-secondary">개발: handoff/00-start.md →</a></p>
+    </main>
+  </div>
+  <script src="../assets/report-shared.js"></script>
+</body>
+</html>

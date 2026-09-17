@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>전체 흐름 — 회의록 UX</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Literata:opsz,wght@7..72,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/report-base.css" />
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="report-layout">
+    <aside class="report-sidebar">
+      <a class="back" href="index.html">← 목록으로</a>
+      <h1>전체 흐름</h1>
+      <p class="chapter-desc">기능 설명 없이, 수요일 회의 한 번 기준.</p>
+    </aside>
+    <main class="report-main">
+      <div class="page-hero">
+        <h2>노트북에서의 여정</h2>
+        <p>왼쪽부터 순서대로 진행됩니다.</p>
+      </div>
+      <div class="card" style="padding:40px 32px;">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;text-align:center;">
+          <div style="flex:1;min-width:120px;">
+            <div style="width:56px;height:56px;margin:0 auto 12px;border-radius:50%;border:2px solid var(--color-primary);display:flex;align-items:center;justify-content:center;color:var(--color-primary);"><i data-lucide="globe"></i></div>
+            <strong>URL 열기</strong>
+            <p class="meta" style="margin-top:6px;">북마크</p>
+          </div>
+          <div style="flex:0;color:var(--color-text-muted);align-self:center;">→</div>
+          <div style="flex:1;min-width:120px;">
+            <div style="width:56px;height:56px;margin:0 auto 12px;border-radius:50%;border:2px solid var(--color-primary);display:flex;align-items:center;justify-content:center;color:var(--color-primary);"><i data-lucide="mic"></i></div>
+            <strong>녹음 시작</strong>
+          </div>
+          <div style="flex:0;color:var(--color-text-muted);align-self:center;">→</div>
+          <div style="flex:1;min-width:120px;">
+            <div style="width:56px;height:56px;margin:0 auto 12px;border-radius:50%;border:2px solid var(--color-primary);display:flex;align-items:center;justify-content:center;color:var(--color-primary);"><i data-lucide="columns-2"></i></div>
+            <strong>회의 중</strong>
+            <p class="meta">좌 상태 · 우 메모</p>
+          </div>
+          <div style="flex:0;color:var(--color-text-muted);align-self:center;">→</div>
+          <div style="flex:1;min-width:120px;">
+            <div style="width:56px;height:56px;margin:0 auto 12px;border-radius:50%;border:2px solid var(--color-primary);display:flex;align-items:center;justify-content:center;color:var(--color-primary);"><i data-lucide="sparkles"></i></div>
+            <strong>요약 생성</strong>
+          </div>
+          <div style="flex:0;color:var(--color-text-muted);align-self:center;">→</div>
+          <div style="flex:1;min-width:120px;">
+            <div style="width:56px;height:56px;margin:0 auto 12px;border-radius:50%;border:2px solid var(--color-primary);display:flex;align-items:center;justify-content:center;color:var(--color-primary);"><i data-lucide="list-todo"></i></div>
+            <strong>편집·저장</strong>
+          </div>
+          <div style="flex:0;color:var(--color-text-muted);align-self:center;">→</div>
+          <div style="flex:1;min-width:120px;">
+            <div style="width:56px;height:56px;margin:0 auto 12px;border-radius:50%;border:2px solid var(--color-primary);display:flex;align-items:center;justify-content:center;color:var(--color-primary);"><i data-lucide="folder-open"></i></div>
+            <strong>며칠 뒤</strong>
+            <p class="meta">목록·챗</p>
+          </div>
+        </div>
+      </div>
+      <div class="callout" style="max-width:none;margin-top:32px;">
+        <strong>하지 않는 것:</strong> 팀 공유 · 푸시 알림 · 전사 전체 읽기 · 여러 회의 통합 질문
+      </div>
+      <p style="margin-top:32px;"><a href="playbook.html" class="btn btn-primary">다음: 실제 동작 보기 →</a></p>
+    </main>
+  </div>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
