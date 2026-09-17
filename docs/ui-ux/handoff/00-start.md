@@ -5,7 +5,7 @@
 - **톤:** Granola (미니멀·여백·pill CTA)  
 - **아이콘:** [Lucide](https://lucide.dev/) only  
 - **도메인:** [domain_story_meeting_agent.md](../../domain_story_meeting_agent.md)  
-- **디자인 시스템 (토큰 중심):** [../assets/report-base.css](../assets/report-base.css) — `:root` 변수가 기준. [03-tokens-and-layout.md](./03-tokens-and-layout.md)는 설명용.  
+- **디자인 시스템:** [../assets/report-base.css](../assets/report-base.css) (토큰 기준) · 코드 착수 [../globals-css-sync.md](../globals-css-sync.md) (`app/globals.css` 1:1)  
 - **화면 mockup:** [../preview/screens.html](../preview/screens.html)
 
 ---
@@ -16,7 +16,7 @@
 | --- | --- | --- |
 | 1 | [01-principles-and-routes.md](./01-principles-and-routes.md) | veto rule, 라우트·사이드바 |
 | 2 | [02-screen-spec.md](./02-screen-spec.md) | ①~⑦ Must-have 체크리스트 |
-| 3 | [report-base.css](../assets/report-base.css) + [03-tokens-and-layout.md](./03-tokens-and-layout.md) | 토큰 확인·수정 (CSS 우선) |
+| 3 | [globals-css-sync.md](../globals-css-sync.md) + [report-base.css](../assets/report-base.css) + [03](./03-tokens-and-layout.md) | 토큰·앱 globals (CSS 우선) |
 | 4 | [04-components.md](./04-components.md) | 버튼 ID, 테이블, 패널, 챗, 오디오 |
 | 5 | [05-product-policies.md](./05-product-policies.md) | 제목·요약·로딩·메모 vs AI 등 |
 | 6 | [06-states-errors-non-goals.md](./06-states-errors-non-goals.md) | Empty/Error, Lucide, MVP 제외 |

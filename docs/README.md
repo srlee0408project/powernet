@@ -17,7 +17,7 @@
 | 대상 | 먼저 읽을 것 |
 | --- | --- |
 | **비개발자(기획·본인)** | [domain_story_meeting_agent.md](./domain_story_meeting_agent.md) → [plans/mvp-engineering/plan.md](./plans/mvp-engineering/plan.md) |
-| **개발·AI 에이전트** | [plans/mvp-engineering/plan.md](./plans/mvp-engineering/plan.md) → [architecture/system-overview.md](./architecture/system-overview.md) → [ui-ux/handoff/00-start.md](./ui-ux/handoff/00-start.md) |
+| **개발·AI 에이전트** | [plan.md](./plans/mvp-engineering/plan.md) → [system-overview.md](./architecture/system-overview.md) → [handoff/00-start.md](./ui-ux/handoff/00-start.md) · 스타일 착수 [globals-css-sync.md](./ui-ux/globals-css-sync.md) |
 | **결정 이력** | [adr/README.md](./adr/README.md) |
 
 ---
@@ -44,7 +44,7 @@ docs/
 │   └── cost-and-retention.md
 ├── adr/                      ← Architecture Decision Records
 │   └── README.md + 0001…
-└── ui-ux/                    ← 화면·토큰·mockup (기존)
+└── ui-ux/                    ← report-base.css · globals-css-sync.md · handoff · preview
 ```
 
 ---
